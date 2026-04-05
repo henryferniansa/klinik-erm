@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
-import api from "../../lib/api";
 import type { Appointment } from "../../types";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 const ICD10_LIST = [
   { code: "M79.1", desc: "Myalgia" },

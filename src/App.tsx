@@ -11,10 +11,11 @@ import InvoicesPage from "./pages/invoices/InvoicesPage";
 import InvoicePrintPage from "./pages/invoices/InvoicePrintPage";
 import SettingsPage from "./pages/settings/SettingsPage";
 import MedicalRecordDetailPage from "./pages/medical-records/MedicalRecordDetailPage";
+const basename = import.meta.env.BASE_URL;
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 

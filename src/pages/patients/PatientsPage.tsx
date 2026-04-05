@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Search, Plus, Users } from "lucide-react";
-import api from "../../lib/api";
 import type { Patient } from "../../types";
 import PatientFormModal from "./PatientFormModal";
 import PageHeader from "../../components/PageHeader";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 export default function PatientsPage() {
   const [patients, setPatients] = useState<Patient[]>([]);

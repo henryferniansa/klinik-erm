@@ -7,8 +7,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import api from "../../lib/api";
 import type { Appointment, Invoice } from "../../types";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 interface Stats {
   totalPatients: number;

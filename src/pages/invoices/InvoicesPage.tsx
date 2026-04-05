@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Plus, X, CreditCard } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import api from "../../lib/api";
 import type { Invoice } from "../../types";
 import InvoiceFormModal from "./InvoiceFormModal";
 import PageHeader from "../../components/PageHeader";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 export default function InvoicesPage() {
   const navigate = useNavigate();

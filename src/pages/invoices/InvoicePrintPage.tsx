@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Printer, ArrowLeft } from "lucide-react";
-import api from "../../lib/api";
 import type { Invoice, Appointment } from "../../types";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 export default function InvoicePrintPage() {
   const { id } = useParams<{ id: string }>();

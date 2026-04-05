@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Plus, Search, FileText } from "lucide-react";
-import api from "../../lib/api";
 import type { MedicalRecord, Patient, User } from "../../types";
 import PageHeader from "../../components/PageHeader";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 interface FullMedicalRecord extends MedicalRecord {
   patient?: Patient;

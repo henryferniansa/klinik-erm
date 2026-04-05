@@ -1,9 +1,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { Plus, Calendar } from "lucide-react";
-import api from "../../lib/api";
+import { getApi } from "../../lib/api";
 import type { Appointment } from "../../types";
 import AppointmentFormModal from "./AppointmentFormModal";
 import PageHeader from "../../components/PageHeader";
+
+const api = getApi();
 
 const statusLabel: Record<string, string> = {
   scheduled: "Menunggu",

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../lib/api";
 import { useAuthStore } from "../../stores/authStore";
 import { config } from "../../lib/config";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 export default function LoginPage() {
   const navigate = useNavigate();

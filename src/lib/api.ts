@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true";
+
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000",
+  baseURL: isDemoMode
+    ? "/mock"
+    : (import.meta.env.VITE_API_URL ?? "http://127.0.0.1:8000"),
 });
 
 api.interceptors.request.use((config) => {
@@ -23,4 +27,9 @@ api.interceptors.response.use(
   },
 );
 
+export { isDemoMode };
 export default api;
+// Tambah di akhir api.ts
+import { mockApi } from "./mockApi";
+
+export const getApi = () => (isDemoMode ? mockApi : api);

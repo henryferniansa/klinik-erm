@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Plus, Pencil, Trash2 } from "lucide-react";
-import api from "../../lib/api";
 import type { Service } from "../../types";
 import ConfirmModal from "../../components/ConfirmModal";
 import PageHeader from "../../components/PageHeader";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 export default function SettingsPage() {
   const [services, setServices] = useState<Service[]>([]);

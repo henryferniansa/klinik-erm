@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
-import api from "../../lib/api";
 import type { Patient, Service, User } from "../../types";
+import { getApi } from "../../lib/api";
+const api = getApi();
 
 interface Props {
   onClose: () => void;
